@@ -30,9 +30,8 @@ hew = [9, 10, 11, 12]
 eq1 = "hello"
 eq2 = ['h', 'e', 'l', 'l', 'o']
 
-number666 result = if eq1 == eq2 
-	then (putStrLn "True")
-	else (putStrLn "False")		
+
+	
 
 
 
