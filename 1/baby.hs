@@ -30,8 +30,14 @@ hew = [9, 10, 11, 12]
 eq1 = "hello"
 eq2 = ['h', 'e', 'l', 'l', 'o']
 
+length' xs = sum [1 | _ <- xs]
 
-	
+
+removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
+
+testFunction sme = [ (a,b,c) | c <- [1..sme], a <- [1..c], b <- [1..a], a^2 + b^2 == c^2, a+b+c == 24]
+
+
 
 
 
