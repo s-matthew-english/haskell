@@ -34,4 +34,9 @@ second (_, y, _) = y
 third :: (a, b, c) -> c
 third (_, _, z) = z
 
+xs = [(1,3),(4,3),(2,4),(5,3),(5,6),(3,1)]
+-- [a+b | (a,b) <- xs]
 
+head' :: [a] -> a
+head' [] = error "Can't call head on an empty list, dummy!"
+head' (x:_) = x
