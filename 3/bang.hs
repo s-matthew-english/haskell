@@ -40,3 +40,23 @@ xs = [(1,3),(4,3),(2,4),(5,3),(5,6),(3,1)]
 head' :: [a] -> a
 head' [] = error "Can't call head on an empty list, dummy!"
 head' (x:_) = x
+
+tell :: (Show a) => [a] -> String
+tell [] = "The list is empty"
+tell (x:[]) = "The list has one element: " ++ show x
+tell (x:y:[]) = "The list has two elements: " ++ show x ++ show y
+tell (x:y:_) = "The list is long. The first two elements are: " ++ show x ++ " and " ++ show y
+
+badAdd :: (Num a) => [a] -> a
+badAdd (x:y:z:[]) = x + y + z
+
+firstLetter :: String -> String
+firstLetter "" = "Empty string, whoops!"
+firstLetter all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+
+bmiTell :: Double -> String
+bmiTell bmi
+	| bmi <= 18.5 = "You're underweight, eat more!"
+	| bmi <= 25.0 = "Looking good!"
+	| bmi <= 30.0 = "You're overweight. Let's work out together!"
+	| otherwise = "You're obese. Go see a doctor."
