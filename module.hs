@@ -13,3 +13,17 @@ numUniques' = \xs -> length (nub xs)
 -- import Data.List hiding (nub)
 -- import qualified Data.Map
 -- import qualified Data.Map as M
+
+-- words "hey these              are the words in this sentence"
+
+-- group ["boom","bip","bip","boom","boom"]
+-- sort ["boom","bip","bip","boom","boom"]
+
+wordNums :: String -> [(String,Int)]
+wordNums = map (\ws -> (head ws, length ws)) . group . sort . words
+
+-- let test = "wa wa wee wa"
+-- wordNums test
+
+wordNums' :: String -> [(String,Int)]
+wordNums' xs = map (\ws -> (head ws, length ws)) (group (sort (words xs)))
